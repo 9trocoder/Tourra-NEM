@@ -6,9 +6,7 @@ app.get('/', (req, res) => {
   res.status(200).json({ message: 'the server said hello!', app: 'Tourra' });
 });
 
-app.post('/', (req, res) => {
-  res.send('You can post to this endpoint....');
-});
+app.post('/');
 
 const port = 3000;
 
