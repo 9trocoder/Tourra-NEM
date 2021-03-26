@@ -16,12 +16,18 @@ exports.checkID = (req, res, next, val) => {
 };
 
 exports.checkBody = (req, res, next) => {
-  if (!req.body.name || !req.body.price) {
-    return res.status(400).json({
-      status: 'fail',
-      message: 'there is a missing name or price',
+  const name = req.params.name;
+  const price = req.params.price;
+  const tour = tours.find((el) => el.name === name && el.price === price);
+
+  res.status(200),
+    json({
+      status: 'success',
+      data: {
+        tour,
+      },
     });
-  }
+
   next();
 };
 
