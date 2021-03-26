@@ -5,8 +5,6 @@ const morgan = require('morgan');
 const app = express();
 
 // middleware
-app.use(morgan('dev'));
-
 app.use(express.json());
 
 app.use((req, res, next) => {
