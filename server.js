@@ -16,12 +16,20 @@ mongoose
     useFindAndModify: false,
     useUnifiedTopology: true
   })
-  .then(con => console.log('DB connection successful!'));
+  .then(() => console.log('DB connection successful!'));
 
 // console.log(process.env);
 // start server
 const port = process.env.PORT || 3000;
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`App is running on port ${port}.....`);
+});
+
+process.on('unhandledRejection', err => {
+  console.log(err.name, err.message);
+  console.log('Unhandler rejection!  ❗❗⚠ shutting down...');
+  server.close(() => {
+    process.exit(1);
+  });
 });
