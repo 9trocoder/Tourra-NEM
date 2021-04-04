@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const AppError = require('./../utils/appError');
 
 const handleCastErrorDB = err => {

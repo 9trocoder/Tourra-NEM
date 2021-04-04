@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const crypto = require('crypto');
 const mongoose = require('mongoose');
 const validator = require('validator');
@@ -50,6 +51,13 @@ userSchema.pre('save', async function(next) {
   this.password = await bcrypt.hash(this.password, 12);
   // delete passwordConfirm field
   this.passwordConfirm = undefined;
+  next();
+});
+
+userSchema.pre('save', function(next) {
+  if (!this.isModified('password') || this.isNew) return next();
+
+  this.passwordChangedAt = Date.now() - 1000;
   next();
 });
 

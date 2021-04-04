@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 class APIFeatures {
   constructor(query, queryString) {
     this.query = query;
