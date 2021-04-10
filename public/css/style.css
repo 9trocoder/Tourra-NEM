@@ -45,7 +45,7 @@ body {
 
 .main {
   background-color: #f7f7f7;
-  padding: 8rem 6rem;
+  padding: 6rem;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -1200,13 +1200,15 @@ body {
 }
 
 .login-form {
+  opacity: 0.7;
+  opacity: 0.7;
   margin: 0 auto;
-  max-width: 55rem;
+  max-width: 40rem;
   background-color: #fff;
   -webkit-box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
   box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
-  padding: 5rem 7rem;
-  border-radius: 5px;
+  padding: 5rem;
+  border-radius: 5%;
 }
 
 .form__input {
@@ -1231,10 +1233,10 @@ body {
 }
 .form__input:focus {
   outline: none;
-  border-bottom: 3px solid #55c57a;
+  border-bottom: 3px solid #78dff8;
 }
 .form__input:focus:invalid {
-  border-bottom: 3px solid #ff7730;
+  border-bottom: 3px solid #b621fe;
 }
 .form__input::-webkit-input-placeholder {
   color: #bbb;
