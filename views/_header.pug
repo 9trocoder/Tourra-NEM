@@ -8,10 +8,12 @@ header.header
         //- input.nav_search-input(type='text' placeholder='Search boat trips')
     .header__logo 
         img(src='/img/favicon.png' alt='Tourra logo')
-    nav.nav.nav--user 
-        //- a.nav__el(href='#') My bookings
-        //- a.nav__el(href='#')
-        //-     img.nav_user-img(src='img/user.jpg', alt='User photo')
-        //-     span Yemicodes
-        a.nav__el(href='/login') Log in
-        a.nav__el.nav__el--cta(href='#') Sign up    
+    nav.nav.nav--user  
+        if user
+            a.nav__el.nav__el--logout(href='#') Sign out
+            a.nav__el(href='#')
+                img.nav__user-img(src=`/img/users/${user.photo}`, alt=`Photo of ${user.name}`)
+                span= user.name.split(' ')[0]
+        else
+            a.nav__el(href='/login') Log in
+            a.nav__el.nav__el--cta(href='#') Sign up    
